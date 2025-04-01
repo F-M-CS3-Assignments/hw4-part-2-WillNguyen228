@@ -61,8 +61,11 @@ vector<int> biggest_divisible_conglomerate(vector<int> input) {
             if (input[i] % input[j] == 0) {
                 // If adding input[i] to dp[j] gives a longer conglomerate, update dp[i]
                 if (dp[i].size() < dp[j].size() + 1) {
-                    dp[i] = dp[j]; // Copy the conglomerate from dp[j]
-                    dp[i].push_back(input[i]); // Add input[i] to the conglomerate. This finishes the update
+                    dp[i] = dp[j]; // Copy the conglomerate from dp[j], this was already calculated 
+                    if (find(dp[i].begin(), dp[i].end(), input[i]) == dp[i].end()) { // Ensure each new element is unique
+                        // Add input[i] to the conglomerate. This finishes the update
+                        dp[i].push_back(input[i]); 
+                    }
                 }
             }
         }
