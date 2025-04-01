@@ -76,7 +76,8 @@ vector<int> biggest_divisible_conglomerate(vector<int> input) {
 }
 
 // Time Complexity Analysis:
-// - Sorting the array: O(N log N)
-// - DP table construction: O(N^2) (Each element checks all previous elements)
-// - Reconstructing the subset: O(N)
+// - Initializing the DP table: O(n)
+// - Sorting the array: O(N log N) (since we are assigning each element to a vector)
+// - DP table construction: O(N^2) (It was a nested for loop where each element checks all previous elements)
+// - Finding the longest vector: O(N)
 // Overall complexity: O(N^2) (Efficient compared to recursive approach O(2^N))
