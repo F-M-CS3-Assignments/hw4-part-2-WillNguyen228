@@ -1,4 +1,5 @@
 #include "bdc.h"
+#include "biggest-divisible-conglomerate.cpp"
 
 #include <vector>
 #include <cassert>
@@ -7,7 +8,6 @@
 
 // uncomment for part 2
 #include <random>
-
 
 int main() {
 
@@ -31,7 +31,6 @@ int main() {
 	soln = {20, 5, 10};
 	set<int> answerSet2(ans.begin(), ans.end());
 	assert(answerSet2 == soln);
-
 
 	// The random number test creates a massive 28,000 value input vector.  
 	// Solving the problem with such a large input is not feasible using recursion, 
